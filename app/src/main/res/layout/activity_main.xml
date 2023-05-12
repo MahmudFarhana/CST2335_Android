@@ -1,32 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_message"
-        android:id="@+id/mytext"/>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text="@string/button_message"
-        android:id="@+id/mybutton"/>
+<TextView
+    android:id="@+id/theText"
+    android:textSize="30sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/hello_message" />
 
     <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:hint="@string/edit_message"
-        android:id="@+id/myedit"/>
+    android:textSize="30sp"
+    android:id="@+id/myedittext"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:hint="Write your text here" />
 
 
-    </LinearLayout>
+<Button
+android:id="@+id/theButton"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="30sp"
+android:text="I'm a button"
+    />
+
+<CheckBox
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="30sp"
+android:text="Check this out"
+android:id="@+id/mycheckbox" />
+
+<Switch
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="30sp"
+android:id="@+id/mySwitch"
+android:text="I'm a switch"/>
+
+<RadioButton
+android:id="@+id/radio"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:textSize="30sp"
+android:text="Radio" />
+
+<ImageView
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:src="@drawable/algonquin_logo"
+android:id="@+id/myimage" />
+
+    <ImageButton
+        android:id="@+id/myImageButton"
+        android:layout_width="259dp"
+        android:layout_height="120dp"
+        android:src="@drawable/algonquin_logo" />
+
+</LinearLayout>
