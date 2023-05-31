@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         theText.setText(model.theText);
         //for image view
         image.setOnClickListener((v) -> {
-            model.theText = "you clicked the image";
+            model.theText = "You clicked the image";
 
             theText.setText(model.theText);
         });
