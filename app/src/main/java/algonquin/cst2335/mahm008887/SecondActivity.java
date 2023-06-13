@@ -2,9 +2,11 @@ package algonquin.cst2335.mahm008887;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -15,9 +17,12 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
-import algonquin.cst2335.mahm008887.databinding.ActivitySecondBinding;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
-//import com.example.FARHANAsAndroidLabs.databinding.ActivitySecondBinding;
+import algonquin.cst2335.mahm008887.databinding.ActivitySecondBinding;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -26,10 +31,19 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivitySecondBinding.inflate(getLayoutInflater());
         // Loads the XML file /res/layout/activity_second.xml
         setContentView(binding.getRoot());
+        File file = new File(getFilesDir(), "Picture.png");
+
+
+        Bitmap theImage = BitmapFactory.decodeFile(file.getAbsolutePath());
+        if (file.exists() && theImage != null) {
+            binding.imageView.setImageBitmap(theImage);
+        }
+
+
+
 
         Intent nextPage = getIntent();  //return the Intent that got us here
         //should be variables in nextPage:
@@ -45,6 +59,7 @@ public class SecondActivity extends AppCompatActivity {
 
         binding.textView4.setText("You Passed " + EMAIL + " and " + DAY + " and: " + AGE);
 
+        //check if your file exists:
         binding.goBackButton.setOnClickListener((v) ->
         {
 
@@ -72,6 +87,20 @@ public class SecondActivity extends AppCompatActivity {
                             Bitmap thumbnail = data.getParcelableExtra("data");
                             binding.imageView.setImageBitmap(thumbnail);
 
+                            //SAVE TI DIDSK:
+                            FileOutputStream fOut = null;
+                            try {
+                                fOut = openFileOutput("Picture.png", Context.MODE_PRIVATE);
+                                thumbnail.compress(Bitmap.CompressFormat.PNG, 100, fOut);
+                                fOut.flush();
+                                fOut.close();
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+
                         }
                         ;
                     }
@@ -92,8 +121,6 @@ public class SecondActivity extends AppCompatActivity {
 //        {
 //            //opposite of startActivity();
 //            finish(); //go back to previous
-        });
-    }
+   });
 }
-
-
+}
