@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -34,6 +35,43 @@ public class SecondActivity extends AppCompatActivity {
         binding = ActivitySecondBinding.inflate(getLayoutInflater());
         // Loads the XML file /res/layout/activity_second.xml
         setContentView(binding.getRoot());
+
+        //for call number
+        SharedPreferences preferences;
+        preferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        binding.editTextPhone.setText(preferences.getString("phoneNumber", ""));
+        binding.goBackButton.setOnClickListener((v) -> {
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("phoneNumber", binding.editTextPhone.getText().toString());
+            editor.apply();
+
+            // Make the phone call
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + binding.editTextPhone.getText().toString()));
+            startActivity(intent);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         File file = new File(getFilesDir(), "Picture.png");
 
 
@@ -117,10 +155,7 @@ public class SecondActivity extends AppCompatActivity {
                 requestPermissions(new String[]{Manifest.permission.CAMERA}, 20);
 
 
-//        binding.goBackButton.setOnClickListener((v) ->
-//        {
-//            //opposite of startActivity();
-//            finish(); //go back to previous
+
    });
 }
 }
