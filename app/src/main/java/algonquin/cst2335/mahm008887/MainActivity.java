@@ -8,8 +8,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
+/**
+ * @author Farhana Mahmud
+ */
 public class MainActivity extends AppCompatActivity {
+
 
     private EditText et;
     private TextView tv;
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         et = findViewById(R.id.editTextText);
