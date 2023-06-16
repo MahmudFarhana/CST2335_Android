@@ -9,10 +9,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
- * @author Farhana Mahmud
+ * In this lab, I am validating the password if it includes at least one uppercase character, one lowercase character,
+ * and one special character.
+ *
+ * Author: Afnan Islam
+ * Version: 1.1
  */
 public class MainActivity extends AppCompatActivity {
-
 
     private EditText et;
     private TextView tv;
@@ -20,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         et = findViewById(R.id.editTextText);
@@ -55,8 +57,9 @@ public class MainActivity extends AppCompatActivity {
                 foundLowerCase = true;
             } else if (Character.isDigit(c)) {
                 foundNumber = true;
-            } else {
-                foundSpecial = true;
+            }
+            else {
+                missingRequirement = true;
             }
         }
 
@@ -75,6 +78,6 @@ public class MainActivity extends AppCompatActivity {
         } else if (!missingRequirement) {
             Toast.makeText(this, "Your password meets all requirements", Toast.LENGTH_SHORT).show();
             tv.setText("Your password is complex enough");
-        }
-    }
+ }
+}
 }
