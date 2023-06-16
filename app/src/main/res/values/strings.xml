@@ -2,4 +2,8 @@
     <string name="app_name">FARHANA\'s Android Labs</string>
     <string name="hello_message">Hello World!</string>
     <string name="button_message">I\'m a button</string>
+    <string name="Type_pass">Type Your Password</string>
+    <string name="Type_pass1">LOGIN</string>
+    <string name="Type_pass2">textPassword</string>
+
 </resources>
