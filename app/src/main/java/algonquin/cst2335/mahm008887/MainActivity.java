@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * In this lab, I am validating the password if it includes at least one uppercase character, one lowercase character,
  * and one special character.
  *
- * Author: Afnan Islam
+ * Author: Farhana Mahmud
  * Version: 1.1
  */
 public class MainActivity extends AppCompatActivity {
