@@ -1,5 +1,4 @@
 package algonquin.cst2335.mahm008887;
-
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
  *
  * Author: Farhana Mahmud
  * Version: 1.0
+
+ * Version: 1.1
+
  */
 public class MainActivity extends AppCompatActivity {
 
