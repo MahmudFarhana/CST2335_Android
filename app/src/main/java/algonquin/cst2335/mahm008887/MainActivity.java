@@ -9,7 +9,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 /**
- * @author Farhana Mahmud
+ * In this lab, I am validating the password if it includes at least one uppercase character, one lowercase character,
+ * and one special character.
+ *
+ * Author: Farhana Mahmud
+ * Version:
  */
 public class MainActivity extends AppCompatActivity {
 
