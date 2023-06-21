@@ -12,7 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
  * and one special character.
  *
  * Author: Farhana Mahmud
+ * Version: 1.0
+
  * Version: 1.1
+
  */
 public class MainActivity extends AppCompatActivity {
 

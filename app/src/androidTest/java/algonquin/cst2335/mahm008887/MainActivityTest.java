@@ -122,4 +122,12 @@ public class MainActivityTest {
 
         textView.check(matches(withText("You shall not pass")));
     }
+
+
+
+}
+
+
+
+
 }
