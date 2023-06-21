@@ -1,5 +1,4 @@
 package algonquin.cst2335.mahm008887;
-
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,10 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
  * and one special character.
  *
  * Author: Farhana Mahmud
- * Version:
+ * Version: 1.1
  */
 public class MainActivity extends AppCompatActivity {
-
 
     private EditText et;
     private TextView tv;
@@ -24,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         et = findViewById(R.id.editTextText);
@@ -59,8 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 foundLowerCase = true;
             } else if (Character.isDigit(c)) {
                 foundNumber = true;
-            } else {
-                foundSpecial = true;
+            }
+            else {
+                missingRequirement = true;
             }
         }
 
@@ -79,6 +77,6 @@ public class MainActivity extends AppCompatActivity {
         } else if (!missingRequirement) {
             Toast.makeText(this, "Your password meets all requirements", Toast.LENGTH_SHORT).show();
             tv.setText("Your password is complex enough");
-        }
-    }
+ }
+}
 }
