@@ -185,7 +185,7 @@ public class ChatRoom extends AppCompatActivity {
                        runOnUiThread(()->{
                            myAdapter.notifyDataSetChanged();
                        });
-                       Snackbar.make(messageText,"You deleted message #"+position,Snackbar.LENGTH_LONG)
+                       Snackbar.make(messageText,"You deleted message # "+position,Snackbar.LENGTH_LONG)
                                .setAction("Undo",click ->{
                                    messages.add(position,removedMessage);
                                    myAdapter.notifyDataSetChanged();
